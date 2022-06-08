@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+$light-theme-bg: #fff;
+$light-theme-color: #222;
+
+$dark-theme-bg: #494646;
+$dark-theme-color: #fff;
+
+*, *::after, *::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', 'sans-serif';
+  color: $light-theme-color;
+  background-color: $light-theme-bg;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header {
+  background-color: #E2001A;
+}
+
+.theme-dark {
+  background-color: $dark-theme-bg;
+  color: $dark-theme-color;
+  .header{
+    background-color: #d2071d;
+  }
+  .box {
+    background-color: #414040;
+    color: #424242;
+    .input-container input{
+      color: #424242;
+      background-color: inherit;
+    }
+    .btn{
+      background-color: #222222;
+    }
+  }
+  .content {
+    background-color: #4d4d4d;
+    color: #F3F3F3;
+    .current_info {
+      color: #F3F3F3;
+      .col {
+        background-color: #3d3d3d;
+        border: 1px solid gray;
+      }
+    }
+  }
+}
+

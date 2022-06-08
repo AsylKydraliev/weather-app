@@ -1,0 +1,13 @@
+<div class="box">
+  <form (ngSubmit)="getWeatherInfo()" #form="ngForm">
+    <span class="text-center">Узнать погоду</span>
+    <div class="input-container">
+      <input type="text" required="" name="city" ngModel/>
+      <label>Название города</label>
+      <small *ngIf="weatherError">
+        {{ weatherError | async }}
+      </small>
+    </div>
+    <button type="submit" class="btn">Показать</button>
+  </form>
+</div>

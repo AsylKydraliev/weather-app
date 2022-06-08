@@ -1,0 +1,50 @@
+<div class="content">
+  <div class="search-block">
+    <app-search></app-search>
+  </div>
+  <div class="info-block" *ngIf="!currentWeather">
+    <app-info-block></app-info-block>
+  </div>
+  <div class="result-block" *ngIf="currentWeather">
+    <div class="temp_type">
+      <button (click)="getCelsius()" class="btnTemp">°C</button>
+      <button (click)="getFahrenheit()" class="btnTemp">°F</button>
+    </div>
+    <p>{{ currentWeather?.location?.name }}</p>
+    <span class="opacity">{{ currentWeather?.location?.country }}</span>
+    <span class="temp">
+      {{ temperatureType ? currentWeather?.current?.temp_f : currentWeather?.current?.temp_c }}
+      {{ temperatureType ? '°F' : '°C'}}
+    </span>
+    <div class="tempImgBlock">
+      <img
+        *ngIf="currentWeather"
+        [src]="currentWeather?.current?.condition?.icon"
+        alt="weather_img"
+      >
+      <span>{{  currentWeather?.current?.condition?.text}}</span>
+    </div>
+    <div class="current_info">
+      <span class="col">
+        <strong>
+          {{ temperatureType ? currentWeather?.current?.feelslike_f : currentWeather?.current?.feelslike_c }}
+          {{ temperatureType ? '°F' : '°C'}}
+        </strong>
+        Ощущается как
+      </span>
+      <span class="col">
+        <strong>{{ currentWeather?.current?.humidity }}%</strong>
+        Влажность
+      </span>
+      <span class="col">
+       <strong>{{ currentWeather?.current?.pressure_mb }}</strong>
+        Давление
+      </span>
+      <span class="col">
+        <strong>{{ currentWeather?.current?.wind_kph }} км/ч </strong>
+        <span>{{ currentWeather?.current?.wind_dir }}</span>
+        Ветер
+      </span>
+    </div>
+  </div>
+</div>

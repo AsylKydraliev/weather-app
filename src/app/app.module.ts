@@ -14,6 +14,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { WeatherEffects } from './store/weatherStore/weather.effects';
 import { InfoBlockComponent } from './components/weather-main/info-block/info-block.component';
 import { SlideToggleComponent } from './ui/slide-toggle/slide-toggle.component';
+import { FooterComponent } from './ui/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +24,19 @@ import { SlideToggleComponent } from './ui/slide-toggle/slide-toggle.component';
     WeatherMainComponent,
     InfoBlockComponent,
     SlideToggleComponent,
+    FooterComponent,
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        StoreModule.forRoot({weatherData: weatherReducer}, {}),
-        EffectsModule.forRoot([WeatherEffects])
+        StoreModule.forRoot({
+          weatherData: weatherReducer
+        }, {}),
+        EffectsModule.forRoot([
+          WeatherEffects,
+        ]),
     ],
   providers: [],
   bootstrap: [AppComponent]

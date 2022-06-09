@@ -13,3 +13,4 @@ export const fetchWeatherFailure = createAction(
   '[Weather] Fetch Failure',
   props<{error: string}>()
 );
+

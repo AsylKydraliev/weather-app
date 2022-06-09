@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/types';
 import { fetchWeatherRequest } from '../../store/weatherStore/weather.actions';
@@ -10,18 +10,18 @@ import { Observable } from 'rxjs';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+
+export class SearchComponent {
   @ViewChild('form') form!: NgForm;
   weatherError: Observable<null | string>;
+  loading: Observable<null | boolean>;
 
   constructor(private store: Store<AppState>) {
     this.weatherError = store.select(state => state.weatherData?.fetchError);
+    this.loading = store.select(state => state.weatherData?.fetchLoading);
   }
 
-  ngOnInit(): void {}
-
   getWeatherInfo() {
-    const city = this.form.value;
-    this.store.dispatch(fetchWeatherRequest(city));
+    this.store.dispatch(fetchWeatherRequest({city: this.form.value.city}));
   }
 }

@@ -1,43 +1,33 @@
 export interface WeatherDataModel {
-  current: {
-    condition: {
-      text: string,
-      icon: string
-    },
-    temp_c: number,
-    temp_f: number,
-    feelslike_c: number,
-    feelslike_f: number,
+  name: string,
+  main: {
+    feels_like: number,
+    temp: number,
+    temp_max: number,
+    temp_min: number,
     humidity: number,
-    wind_kph: number,
-    wind_dir: number,
-    pressure_mb: number
+    pressure: number
   },
-  location: {
-    name: string,
-    country: string
+  wind: {
+    speed: number,
+    deg: number
   }
 }
 
 export class WeatherClassModel {
   constructor(
-    public current: {
-      condition: {
-        text: string,
-        icon: string
-      },
-      temp_c: number,
-      temp_f: number,
-      feelslike_c: number,
-      feelslike_f: number,
+    public name: string,
+    public main: {
+      feels_like: number,
+      temp: number,
+      temp_max: number,
+      temp_min: number,
       humidity: number,
-      wind_kph: number,
-      wind_dir: number,
-      pressure_mb: number
+      pressure: number
     },
-    public location: {
-      name: string,
-      country: string
+    public wind: {
+      speed: number,
+      deg: number
     }
   ) {}
 }

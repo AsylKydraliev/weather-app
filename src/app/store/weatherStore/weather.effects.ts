@@ -13,7 +13,7 @@ export class WeatherEffects {
     private actions: Actions,
   ) {}
 
-  fetchAlbums = createEffect(() => this.actions.pipe(
+  fetchWeatherData = createEffect(() => this.actions.pipe(
     ofType(fetchWeatherRequest),
     mergeMap(city => this.weatherService.getCurrentWeather(city.city).pipe(
       map(weatherData => fetchWeatherSuccess({weatherData})),

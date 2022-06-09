@@ -9,7 +9,9 @@ import { WeatherService } from './services/weather.service';
 export class AppComponent implements OnInit{
   title = 'weather-app';
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(
+    private weatherService: WeatherService,
+  ) {}
 
   ngOnInit () {
     this.weatherService.addClassToBody();

@@ -13,8 +13,12 @@ export class WeatherMainComponent implements OnInit, OnDestroy {
 
   weatherData: Observable<null | WeatherClassModel>;
   currentWeather!: WeatherClassModel | null;
-  temperatureType: boolean = false;
+  temperatureType = false;
   weatherDataSubscription!: Subscription;
+  fahrenheit!: number;
+  feelsFahrenheit!: number;
+  minFahrenheit!: number;
+  maxFahrenheit!: number;
 
   constructor(private store: Store<AppState>) {
     this.weatherData = store.select(state => state.weatherData?.weatherData);
@@ -26,12 +30,16 @@ export class WeatherMainComponent implements OnInit, OnDestroy {
     });
   }
 
-  getCelsius() {
-    this.temperatureType = false;
-  }
-
   getFahrenheit() {
-    this.temperatureType = true;
+    this.temperatureType = !this.temperatureType;
+    const celsius = <number>this.currentWeather?.main.temp;
+    const feelsCelsius = <number>this.currentWeather?.main.feels_like;
+    const minFahrenheit = <number>this.currentWeather?.main.temp_min;
+    const maxFahrenheit = <number>this.currentWeather?.main.temp_max;
+    this.fahrenheit = Math.ceil(celsius * 1.8 + 32);
+    this.feelsFahrenheit = Math.ceil(feelsCelsius * 1.8 + 32);
+    this.minFahrenheit = Math.ceil(minFahrenheit * 1.8 + 32);
+    this.maxFahrenheit = Math.ceil(maxFahrenheit * 1.8 + 32);
   }
 
   ngOnDestroy() {

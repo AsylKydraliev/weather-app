@@ -7,5 +7,5 @@ export type WeatherState = {
 };
 
 export type AppState = {
-  weatherData: WeatherState
+  weatherData: WeatherState,
 };

@@ -1,7 +1,7 @@
 .content {
   margin: 50px auto;
   max-width: 900px;
-  height: auto;
+  height: 100%;
   -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
   box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
@@ -48,6 +48,7 @@
   position: absolute;
   top: 5%;
   right: 5%;
+  transition: 0.2s;
 }
 
 .opacity{
@@ -97,7 +98,7 @@
   width: 90%;
   margin-top: 35px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   color: #3d3d3d;
 }
@@ -105,14 +106,42 @@
 .col{
   display: flex;
   flex-direction: column;
-  width: 120px;
-  font-size: 12px;
+  width: 150px;
+  font-size: 11px;
   padding: 10px;
   margin: 5px;
   border-radius: 10px;
   background-color: #e9eeee;
   strong {
+    margin-bottom: 5px;
     font-size: 18px;
     flex-grow: 1;
+  }
+}
+
+@media screen and (max-width: 710px){
+  .content {
+    flex-direction: column;
+    margin: 15px auto;
+  }
+  .search-block{
+    width: 100%;
+  }
+  .info-block{
+    margin: 4rem auto;
+  }
+  .result-block {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .temp_type {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+  }
+  .temp {
+    margin-top: 15px;
   }
 }

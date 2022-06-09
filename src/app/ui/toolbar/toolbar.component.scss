@@ -1,5 +1,6 @@
 .header {
   padding: 20px 0;
+  width: 100%;
 }
 
 a{
@@ -42,23 +43,56 @@ a{
   font-size: 18px;
 }
 
-.btns_block{
+.lang{
   display: flex;
-  .btn {
-    padding: 4px;
-    margin: 0 1px;
-    border: none;
-    border-radius: 2px;
+  a {
+    margin: 0 7px;
+    font-size: 18px;
     cursor: pointer;
-    transition: 0.1s;
-    background-color: whitesmoke;
+    font-weight: 500;
+    color: #e1f1f1;
+    opacity: 0.8;
+    text-decoration: none;
   }
-
-  .btn:active {
-    box-shadow: 0 0 2px 1px lightgray;
+  a:hover {
+    text-decoration: underline;
   }
-
-  .btn:focus {
-    background-color: #c4c1c1;
+  a:focus {
+    text-decoration: underline;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .lang {
+    flex-direction: column;
+    justify-content: center;
+    a {
+      font-size: 15px;
+    }
+    div{
+      margin-bottom: 7px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .content_header{
+    flex-direction: column;
+    text-align: center;
+  }
+  .lang {
+    margin-top: 10px;
+  }
+  .logo {
+    margin: 0;
+  }
+  .header {
+    padding: 10px;
+  }
+  .container {
+    padding-bottom: 0;
+  }
+}
+
+
+

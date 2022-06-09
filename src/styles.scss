@@ -15,6 +15,7 @@ html{
 }
 
 body {
+  height: 100%;
   font-family: 'Roboto', 'sans-serif';
   color: $light-theme-color;
   background-color: $light-theme-bg;
@@ -28,6 +29,16 @@ body {
 
 .header {
   background-color: #E2001A;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
 }
 
 .theme-dark {
@@ -57,6 +68,16 @@ body {
         border: 1px solid gray;
       }
     }
+  }
+}
+
+footer {
+  //position: fixed;
+}
+
+@media screen and (max-width: 710px) {
+  .container {
+    padding-bottom: 30px;
   }
 }
 

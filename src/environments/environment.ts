@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  weatherApi: 'https://api.weatherapi.com/v1/current.json?key=288feb09f79d4ed9a9070852220706&q='
+  weatherApi: 'https://api.openweathermap.org/data/2.5/weather?q=',
+  weatherApiParams: '&appid=dba332701e275b10c897357abc53bf07&units=metric',
 };
 
 /*

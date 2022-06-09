@@ -14,7 +14,15 @@ export class WeatherService {
   constructor(private http: HttpClient) {}
 
   getCurrentWeather (city: string) {
-    return this.http.get<WeatherDataModel>(environment.weatherApi + city + '&aqi=no');
+    let lang: string;
+    if(localStorage.getItem('lang') === 'ru') {
+      lang = 'ru';
+    } else {
+      lang = 'en';
+    }
+    return this.http.get<WeatherDataModel>(
+      environment.weatherApi + city + environment.weatherApiParams + '&lang=' + lang
+    );
   }
 
   addThemeDataToLocalStorage(themeStatus: boolean) {

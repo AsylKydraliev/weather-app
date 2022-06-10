@@ -1,6 +1,6 @@
 <div class="box">
   <form (ngSubmit)="getWeatherInfo()" #form="ngForm">
-    <span class="text-center">Узнать погоду</span>
+    <span class="text-center">{{ 'SEARCH.TITLE' | translate }}</span>
     <div class="input-container">
       <input
         type="text"
@@ -8,7 +8,7 @@
         name="city"
         ngModel
       />
-      <label>Название города</label>
+      <label>{{ 'SEARCH.INPUT_NAME' | translate }}</label>
       <small *ngIf="weatherError">
         {{ weatherError | async }}
       </small>
@@ -20,7 +20,7 @@
       [disabled]="loading | async"
     >
       <i class="fa fa-spinner fa-spin" *ngIf="loading | async"></i>
-      Показать
+      {{ 'SEARCH.BUTTON' | translate }}
     </button>
   </form>
 </div>

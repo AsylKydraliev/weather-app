@@ -16,7 +16,7 @@
 }
 
 .search-block {
-  width: 30%;
+  width: 35%;
   z-index: 1;
 }
 
@@ -135,11 +135,26 @@
   }
 }
 
+@media screen and (max-width: 440px) {
+  .current_info {
+    width: 100%;
+  }
+  .col {
+    width: 46%;
+  }
+}
+
 @media screen and (max-width: 410px) {
+  .current_info {
+    width: 100%;
+  }
+  .col {
+    width: 46%;
+  }
   .temp_type {
     position: absolute;
-    top: 1%;
-    right: 1%;
+    top: 2%;
+    right: 4%;
   }
   .temp {
     margin-top: 15px;

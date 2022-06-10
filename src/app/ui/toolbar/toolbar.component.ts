@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,13 +8,15 @@ import { Component } from '@angular/core';
 })
 export class ToolbarComponent {
 
-  chooseEn(event: Event) {
-    event.preventDefault();
+  constructor(private translate: TranslateService) {}
+
+  chooseEn() {
+    this.translate.use('en');
     localStorage.setItem('lang', 'en');
   }
 
-  chooseRu(event: Event) {
-    event.preventDefault();
+  chooseRu() {
+    this.translate.use('ru');
     localStorage.setItem('lang', 'ru');
   }
 }

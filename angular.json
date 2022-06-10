@@ -16,6 +16,12 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ru": "src/locale/messages.ru.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -38,6 +44,9 @@
           "configurations": {
             "ru": {
               "localize": ["ru"]
+            },
+            "en-US": {
+              "localize": ["en-US"]
             },
             "production": {
               "budgets": [
@@ -76,6 +85,12 @@
           "configurations": {
             "production": {
               "browserTarget": "weather-app:build:production"
+            },
+            "ru": {
+              "browserTarget": "weather-app:build:ru"
+            },
+            "en-US": {
+              "browserTarget": "weather-app:build:en-US"
             },
             "development": {
               "browserTarget": "weather-app:build:development"

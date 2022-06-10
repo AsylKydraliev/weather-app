@@ -3,13 +3,20 @@
     <div class="content_header">
       <div class="logo">
         <a href="#">
-          <img src="../../../assets/icons/optima-logo.jpg" alt="Optima logo" width="280" height="48">
+          <img
+            i18n-title
+            title="Optima logo"
+            src="../../../assets/icons/optima-logo.jpg"
+            alt="Optima logo"
+            width="280"
+            height="48"
+          >
         </a>
       </div>
       <div class="lang">
         <div>
-          <a href="#" (click)="chooseEn($event)">Eng</a>
-          <a href="#" (click)="chooseRu($event)">Rus</a>
+          <a type="button" (click)="chooseEn()">{{ 'BUTTONS.EN' | translate }}</a>
+          <a type="button" (click)="chooseRu()">{{ 'BUTTONS.RU' | translate }}</a>
         </div>
         <app-slide-toggle></app-slide-toggle>
       </div>

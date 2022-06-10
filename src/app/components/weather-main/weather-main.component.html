@@ -12,47 +12,47 @@
       </button>
     </div>
     <p>{{ currentWeather?.name }}</p>
-    <span class="temp" i18n>
+    <span class="temp">
       {{ temperatureType ? fahrenheit : currentWeather?.main?.temp }}
       {{ temperatureType ? '°F' : '°C'}}
     </span>
     <div class="current_info">
-      <span class="col">
+      <div class="col">
         <strong>
           {{ temperatureType ? minFahrenheit : currentWeather?.main?.temp_min }}
           {{ temperatureType ? '°F' : '°C'}}
         </strong>
-        Минимальная
-      </span>
-      <span class="col">
+        <span>{{ 'RESULT.MIN' | translate }}</span>
+      </div>
+      <div class="col">
         <strong>
           {{ temperatureType ? maxFahrenheit : currentWeather?.main?.temp_max }}
           {{ temperatureType ? '°F' : '°C'}}
         </strong>
-        Максимальная
-      </span>
-      <span class="col">
+        <span>{{ 'RESULT.MAX' | translate }}</span>
+      </div>
+      <div class="col">
         <strong>
           {{ temperatureType ? feelsFahrenheit : currentWeather?.main?.feels_like }}
           {{ temperatureType ? '°F' : '°C'}}
         </strong>
-        Ощущается как
-      </span>
-      <span class="col">
+        <span>{{ 'RESULT.FEELS' | translate }}</span>
+      </div>
+      <div class="col">
         <strong>{{ currentWeather?.main?.humidity }}%</strong>
-        Влажность
-      </span>
+        <span>{{ 'RESULT.HUMIDITY' | translate }}</span>
+      </div>
       <span class="col">
        <strong>{{ currentWeather?.main?.pressure }}</strong>
-        Давление
+        <span>{{ 'RESULT.PRESSURE' | translate }}</span>
       </span>
-      <span class="col">
+      <div class="col">
         <strong>
           <strong>{{ currentWeather?.wind?.speed }} / </strong>
           <strong>{{ currentWeather?.wind?.deg }}</strong>
         </strong>
-        Ветер
-      </span>
+        <span>{{ 'RESULT.WIND' | translate }}</span>
+      </div>
     </div>
   </div>
 </div>

@@ -12,6 +12,7 @@
     "EN": "Eng"
   },
   "RESULT": {
+    "CITY": "",
     "MIN": "Minimal",
     "MAX": "Maximum",
     "FEELS": "Feels like",

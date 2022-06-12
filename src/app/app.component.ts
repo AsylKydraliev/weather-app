@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from './services/weather.service';
+import { ThemeService } from './services/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,9 @@ import { WeatherService } from './services/weather.service';
 })
 export class AppComponent implements OnInit{
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit () {
-    this.weatherService.addClassToBody();
+    this.themeService.addClassToBody();
   }
 }

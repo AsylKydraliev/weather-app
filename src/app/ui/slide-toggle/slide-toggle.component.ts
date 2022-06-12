@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from '../../services/weather.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-slide-toggle',
@@ -10,7 +10,7 @@ export class SlideToggleComponent implements OnInit {
 
   themeStatus!: boolean;
 
-  constructor(private weatherService: WeatherService) { }
+  constructor(private themeService: ThemeService) { }
 
   ngOnInit(): void {
     this.themeStatus = localStorage.getItem('themeStatus') === 'true';
@@ -19,6 +19,6 @@ export class SlideToggleComponent implements OnInit {
   changeTheme (event: Event) {
     const input = <HTMLInputElement>event.target;
     const themeValue = input.checked;
-    this.weatherService.addThemeDataToLocalStorage(themeValue);
+    this.themeService.addThemeDataToLocalStorage(themeValue);
   }
 }
